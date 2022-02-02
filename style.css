@@ -70,6 +70,7 @@
     left: calc(50% - 1px);
     top: 50px;
     z-index: 2;
+    animation-duration: 60s;
 
     animation-name: arrows;
     animation-duration: 60s;
@@ -86,6 +87,7 @@
     left: calc(50% - 3px);
     top: 20px;
     z-index: 1;
+    animation-duration: calc(60s * 60);
 }
 .hour {
     width: 12px;
@@ -95,6 +97,7 @@
     position: absolute;
     left: calc(50% - 6px);
     top: 100px;
+    animation-duration: calc(60s * 1200);
 }
 .center {
     width: 15px;
@@ -107,6 +110,11 @@
     z-index: 5;
     transform: translate(-50%, -50%);
 }
+.sec, .min, .hour {
+animation-name: arrows;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+}
 
 @keyframes arrows {
     from {
@@ -117,4 +125,61 @@
         transform: rotate(360deg);
         transform-origin: 0 100% 0;
     }
+}
+p {
+    margin: 0;
+    font-style: 36px;
+    position: absolute;
+}
+.number-12 {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+.number-6 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+.number-3 {
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.number-9 {
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.number-1 {
+    right: 25%;
+    top: 7%;
+}
+.number-2 {
+    right: 9%;
+    top: 23%;
+}
+.number-4 {
+    right: 9%;
+    bottom: 23%;
+}
+.number-5 {
+    right: 25%;
+    bottom: 7%;
+}
+.number-7 {
+    left: 25%;
+    bottom: 7%;
+}
+.number-8 {
+    left: 9%;
+    bottom: 23%;
+}
+.number-11 {
+    left: 24%;
+    top: 8%;
+}
+.number-10 {
+    left: 8%;
+    top: 24%;
 }
