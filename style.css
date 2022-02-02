@@ -1,0 +1,120 @@
+.wrapper {
+    width: 900px;
+    height: 700px;
+    background: beige;
+    margin: 0 auto; 
+}
+
+.wrapper div {
+    width: 100px;
+    height: 100px;
+    background: tomato;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+@keyframes move {
+    0% {
+    top: 0;
+    left: 0;
+    }
+    50% {
+        top: 100px;
+        background: cornflowerblue;
+    }
+    100%{
+        top: 0;
+        left: calc(100% - 100px);
+    }
+}
+
+.box-1 {
+    animation-name: move;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.box-2 {
+    animation-name: pulse;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulse {
+    from {
+     transform: scale(0.7);
+     box-shadow: 0 0 0 #cecece;
+    }
+    to {
+        transform: scale(1.2);
+        box-shadow: 0 0 25px darkmagenta;
+    }
+}
+
+.clock {
+    width: 500px;
+    height: 500px;
+    background: dodgerblue;
+    border-radius: 50%;
+    margin: 100px auto; 
+    position: relative;
+}
+.sec {
+    width: 2px;
+    height: 200px;
+    background: firebrick;
+    position: absolute;
+    left: calc(50% - 1px);
+    top: 50px;
+    z-index: 2;
+
+    animation-name: arrows;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+.min {
+    width: 6px;
+    height: 230px;
+    background: #444;
+    border-radius: 3px;
+    position: absolute;
+    left: calc(50% - 3px);
+    top: 20px;
+    z-index: 1;
+}
+.hour {
+    width: 12px;
+    height: 150px;
+    background: #000;
+    border-radius: 5px;
+    position: absolute;
+    left: calc(50% - 6px);
+    top: 100px;
+}
+.center {
+    width: 15px;
+    height: 15px;
+    background: crimson;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes arrows {
+    from {
+    transform: rotate(0deg);
+    transform-origin: 0 100% 0;
+    }
+    to {
+        transform: rotate(360deg);
+        transform-origin: 0 100% 0;
+    }
+}
